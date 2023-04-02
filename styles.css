@@ -1,0 +1,484 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+:root {
+  --ff-headings: 'Permanent Marker', cursive;
+  --ff-paragraphs: 'Rubik', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: aliceblue;
+}
+
+p {
+  font-family: var(--ff-paragraphs);
+}
+
+
+/* navigation bar  */
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+
+.logo {
+  font-family: var(--ff-headings);
+  font-size: 3em;
+  margin-left: 50px;
+  color: white;
+}
+
+header ul {
+  margin-right: 50px;
+  font-family: var(--ff-headings);
+  animation-name: floating;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+	0% { transform: translate(0, 0px); }
+	50% { transform: translate(5px, 0px); }
+	100% { transform: translate(0, 0px); }
+}
+
+header ul li {
+  display: inline;
+  margin-left: 30px;
+}
+
+header ul li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: aliceblue;
+  color: black;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+header ul li a:hover {
+  padding: 15px;
+  color: #0071f2ff;
+}
+
+/* hero banner */
+
+header {
+  width: 100%;
+  min-height: 110vh;
+  clip-path: polygon(100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
+  background: rgb(1,47,144);
+  background: linear-gradient(32deg, rgba(1,47,144,1) 19%, rgba(39,255,198,1) 100%);
+}
+
+header .wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 80vh;
+}
+
+header h1 {
+  font-family: var(--ff-headings);
+  text-transform: uppercase;
+  font-size: 5rem;
+  color: white;
+  margin-left: 50px;
+  animation-name: floating-img;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+  animation-delay: 1s;
+}
+.wrapper img {
+  width: 600px;
+  animation-name: floating-img;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+
+}
+
+@keyframes floating-img {
+	0% { transform: translate(0, 0px); }
+	50% { transform: translate(0px, 15px); }
+	100% { transform: translate(0, 0px); }
+}
+
+
+/* header mobile */
+
+@media screen and (max-width: 1100px) {
+  header h1 {
+    font-size: 4em;
+  }
+
+  .wrapper img {
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+
+  header .wrapper {
+    flex-direction: column;
+  }
+
+  header h1 {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .nav-bar ul li a {
+    font-size: 0.7em;
+    padding: 8px;
+  }
+
+  .nav-bar ul li a:hover {
+    padding: 12px;
+  }
+
+  .nav-bar ul li {
+    margin-left: 10px;
+  }
+
+  .nav-bar .logo {
+    font-size: 2.5em;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  header h1 {
+    font-size: 3em;
+  }
+
+  .wrapper img {
+    width: 100%;
+  }
+
+  .nav-bar ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .nav-bar {
+    height: 150px;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.324);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+  }
+}
+
+
+/* The about section */
+
+#about h2, .about-intro {
+  text-align: center;
+}
+
+#about h2 {
+  margin-top: 150px;
+  font-family: var(--ff-headings);
+  font-size: 3em;
+  color: #0071f2ff;
+  text-transform: uppercase;
+}
+
+.about-intro {
+  font-size: 1.3em;
+  margin-top: 20px;
+  padding: 0 50px;
+}
+
+#about .about-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 300px;
+  gap: 40px;
+}
+
+.box {
+  width: 375px;
+  height: 400px;
+  background-color: #194f8c;
+  text-align: center;
+  box-shadow: 0px 0px 15px #66aaf786;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  transition: all 0.5s;
+}
+
+.box:hover {
+  box-shadow:  0 0 50px #3c97ff;
+  transform: scale(1.03);
+}
+
+.line {
+  width: 50px;
+  background-color: white;
+  height: 2px;
+  z-index: 10;
+}
+
+.box::before {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.582);
+}
+
+.box h3 {
+  font-family: var(--ff-headings);
+  color: white;
+  margin-top: 100px;
+  font-size: 2em;
+  z-index: 10;
+}
+
+.box p {
+  margin-top: 20px;
+  padding: 0 10px;
+  color: white;
+  z-index: 10;
+}
+
+.box-one {
+  background-image: url(images/3angelsmessage.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.box-two {
+  background-image: url(images/phonto\ \(1\).JPG);
+  background-size: cover;
+  background-position: center;
+}
+
+.box-three {
+  background-image: url(images/homegarden\(1\).jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+
+@media screen and (max-width: 1250px) {
+  #about .about-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .box {
+    width: 90%;
+  }
+}
+
+
+/* project section */
+
+#projects {
+  width: 100%;
+  min-height: 200vh;
+  clip-path: polygon(50% 0%, 100% 5%, 100% 95%, 50% 100%, 0 95%, 0 5%);
+  background: #00234aff;
+}
+
+#projects h2 {
+  color: white;
+  font-size: 3em;
+  text-align: center;
+  font-family: var(--ff-headings);
+  padding-top: 150px;
+}
+
+.projects-intro {
+  text-align: center;
+  color: white;
+  font-size: 1.3em;
+  padding: 0 50px;
+}
+
+.project-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 400px);
+  justify-content: center;
+  gap: 200px 50px;
+  margin-top: 100px;
+  padding-bottom: 200px;
+}
+
+.project {
+  width: 400px;
+  height: 400px;
+  background-color: aquamarine;
+  border: 3px solid black;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.project::before {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.683);
+}
+
+.project:hover {
+  border: 15px solid #0071f2ff;
+  box-shadow: 0 0 20px #0071f2ff;
+  cursor: pointer;
+}
+
+.project::before {
+  content: '';
+  color: white;
+  text-decoration: none;
+  font-family: var(--ff-headings);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2em;
+}
+
+.project-one {
+  background-image: url(images/Screenshothuddle.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.project-one::before {
+  content: 'Huddle Landing Page';
+}
+
+.project-two {
+  background-image: url(images/Screenshot\ \(25\).png);
+  background-position: center;
+  background-size: cover;
+}
+
+.project-two::before {
+  content: 'Stats Preview Card';
+}
+
+.project-three {
+  background-image: url(images/Screenshot\ \(28\).png);
+  background-position: center;
+  background-size: cover;
+}
+
+.project-three::before {
+  content: '3 Column Preview Card';
+}
+
+.project-four {
+  background-image: url(images/Screenshot\ \(27\).png);
+  background-position: center;
+  background-size: cover;
+}
+
+.project-four::before {
+  content: 'Results Summary';
+}
+
+.project-five {
+  background-image: url(images/Screenshot\ \(32\).png);
+  background-position: center;
+  background-size: cover;
+}
+
+.project-five::before {
+  content: 'FCC Form';
+}
+
+.project-six {
+  background-image: url(images/Screenshot\ \(29\).png);
+  background-position: center;
+  background-size: cover;
+}
+
+.project-six::before {
+  content: 'NFT Preview Card';
+}
+
+
+@media screen and (max-width: 930px) {
+  .project-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #projects {
+    clip-path: polygon(50% 0%, 100% 2%, 100% 98%, 50% 100%, 0 98%, 0 2%);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .project {
+    width: 90%;
+    border: 3px solid black;
+    transition: none;
+  }
+  
+  .project:hover {
+    border: 8px solid #0071f2ff;
+    box-shadow: 0 0 20px #0071f2ff;
+    cursor: pointer;
+  }
+
+}
+
+
+/* footer */
+
+footer {
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+footer .fa-brands {
+  font-size: 2.5em;
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s;
+}
+
+.fa-brands:hover {
+  padding-bottom: 15px;
+}
+
+
+
+
+
+
+
+
+
